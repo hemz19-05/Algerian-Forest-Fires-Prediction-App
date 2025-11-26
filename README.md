@@ -13,13 +13,13 @@ The primary objective of this project was to practice:
 
 This project is based on the ML deployment course by Krish Naik, and I extended it with my own deployment + pipeline setup.
 
-🚀 Demo
+# 🚀 Demo
 
 Live App on AWS Elastic Beanstalk:
 
 👉 http://algerianforestfiresprediction-env.eba-wvnihueh.ap-southeast-2.elasticbeanstalk.com/predictdata
 
-🔍 Problem Overview
+# 🔍 Problem Overview
 
 Forest fires are a major environmental and safety issue in Algeria.
 This application predicts the FWI using several meteorological features:
@@ -33,7 +33,7 @@ This application predicts the FWI using several meteorological features:
 7. ISI
 8. Region + Classes
 
-🧠 Model Used
+# 🧠 Model Used
 
 Ridge Regression (Scikit-Learn)
 
@@ -44,30 +44,23 @@ Model artifacts saved as:
 model/ridg.pkl  
 model/scaler.pkl
 
-🧰 Tech Stack
-ML & Backend
+# 🧰 Tech Stack
+ML & Backend:
 
-Python
+✔ Python
+✔ Flask (REST APIs)
+✔ Scikit-learn
+✔ Pandas, NumPy
 
-Flask (REST APIs)
+Deployment & DevOps:
 
-Scikit-learn
+✔ AWS Elastic Beanstalk
+✔ EC2
+✔ Gunicorn
+✔ .ebextensions config
+✔ Linux virtual server environment
 
-Pandas, NumPy
-
-Deployment & DevOps
-
-AWS Elastic Beanstalk
-
-EC2
-
-Gunicorn
-
-.ebextensions config
-
-Linux virtual server environment
-
-⚙️ Application Architecture
+# ⚙️ Application Architecture
 app/
 │
 ├── application.py         # Flask API
@@ -78,7 +71,7 @@ app/
 ├── Procfile               # Gunicorn entry
 └── .ebextensions/         # AWS config
 
-🖥️ How It Works
+# 🖥️ How It Works
 
 You enter the inputs:
 
@@ -87,29 +80,22 @@ Temperature, Rain, RH, Wind, FFMC, DMC, ISI, etc.
 
 The app:
 
-Validates form input
+✔ Validates form input
+✔ Passes it into the model
+✔ Predicts the Fire Weather Index (FWI)
+✔ Returns the result to the UI
 
-Passes it into the model
-
-Predicts the Fire Weather Index (FWI)
-
-Returns the result to the UI
-
-☁️ Deployment Workflow
+# ☁️ Deployment Workflow
 
 🔥 Full deployment done on AWS:
 
-Packaged app into deployment zip
+✔Packaged app into deployment zip
+✔ Added Procfile + Gunicorn
+✔ Created EB environment
+✔ Configured WSGI using .ebextensions/python.config
+✔ Deployed successfully on AWS
 
-Added Procfile + Gunicorn
-
-Created EB environment
-
-Configured WSGI using .ebextensions/python.config
-
-Deployed successfully on AWS
-
-Key AWS Concepts Covered
+# Key AWS Concepts Covered
 
 ✔ Elastic Beanstalk deployment
 ✔ E2C running Python 3.14
@@ -117,7 +103,7 @@ Key AWS Concepts Covered
 ✔ Directory and WSGI routing
 ✔ Environment updates & logs troubleshooting
 
-📝 REST API Endpoint
+# 📝 REST API Endpoint
 POST /predictdata
 
 
@@ -135,27 +121,21 @@ http://127.0.0.1:5000/
 
 🛠 Future Improvements
 
-Add UI styling (Bootstrap)
+✔ Add UI styling (Bootstrap)
+✔ Add Docker + CI/CD
+✔ Use AWS RDS for logging predictions
+✔ Build API versioning + JWT auth
 
-Add Docker + CI/CD
+# 📌 Motivation
 
-Use AWS RDS for logging predictions
-
-Build API versioning + JWT auth
-
-📌 Motivation
-
-This wasn’t just about building an ML model —
-It was specifically to learn real-world deployment for ML apps, which is often the hardest part.
+This wasn’t just about building an ML model, it was specifically to learn real-world deployment for ML apps.
 
 This helped me practice:
 
-Full-stack ML pipeline
+✔ Full-stack ML pipeline
+✔ Deployment on cloud infrastructure
+✔ Working with production server configurations
 
-Deployment on cloud infrastructure
-
-Working with production server configurations
-
-😊 Acknowledgements
+# 😊 Acknowledgements
 
 Inspired by Krish Naik’s deployment course.
